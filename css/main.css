@@ -1,0 +1,111 @@
+/*  */
+@import url('https://fonts.googleapis.com/css2?family=Victor+Mono:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+p {
+    font-family: 'Victor Mono', monospace;
+    line-height: 1.7 ;
+    color: rgb(158, 157, 157);
+    font-size: 15px ;
+    font-weight: 400;
+}
+h1 ,
+h2 ,
+h3 ,
+h4 , 
+h5 , 
+h6 
+{
+    font-family: 'Oswald', sans-serif;
+    color: #000000 ;
+}
+body {
+    background-color: #000000 ;
+}
+#Accordion 
+{
+    background-color: #ffffff;
+    max-width: 80% ;
+    margin: 40px auto;
+    border-radius: 14px ;
+    position: relative;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+@media (max-width:767px ) {
+    #Accordion  {
+        max-width: 97% ;
+        
+      }
+    
+  }
+#Accordion  h1 
+{
+    margin-bottom: 40px ;
+    position: relative;
+    z-index: 1111;
+    width: fit-content;
+}
+#Accordion  h1::before 
+{
+    content: "";
+    position: absolute;
+    width: 80%  ;
+    height: 6px ;
+    bottom: 0;
+    background-color: #7fff00;
+    z-index: -1;
+}
+#Accordion .Accordion-box 
+{
+    padding: 10px ;
+    margin-bottom: 10px ;
+    border-bottom: 1px solid #000000;
+}
+.Accordion-box .label 
+{
+    /* background-color: rgb(0, 0, 0); */
+    padding: 11px ;
+    color: #080808;
+    font-size: 18px ;
+    font-weight: 600;
+    letter-spacing: 1px ;
+    position: relative;
+    cursor: pointer;
+
+}
+.Accordion-box .label::before 
+{
+    content: "+";
+    position: absolute;
+    top: 50% ;
+    transform: translateY(-50%);
+    right: 11px ;
+    color: #080808;
+    cursor: pointer;
+}
+
+.Accordion-box .content{
+    position: relative;
+    background: white;
+    height: 0;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.5s;
+}
+/* Unhides the content part when active. Sets the height */
+
+.Accordion-box.active .content {
+    height: 190px;
+  }
+  @media (max-width:767px ) {
+    .Accordion-box.active .content {
+        height: 290px;
+      }
+    
+  }
+  /* Changes from plus sign to negative sign once active */
+  
+.Accordion-box.active .label::before {
+    content: '-';
+  }
